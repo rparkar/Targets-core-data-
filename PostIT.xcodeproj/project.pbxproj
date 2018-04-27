@@ -12,7 +12,7 @@
 		6C28D02F2093DD170079F9FE /* PostIT.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 6C28D02D2093DD170079F9FE /* PostIT.xcdatamodeld */; };
 		6C28D0312093DD190079F9FE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6C28D0302093DD190079F9FE /* Assets.xcassets */; };
 		6C28D0342093DD190079F9FE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6C28D0322093DD190079F9FE /* LaunchScreen.storyboard */; };
-		6C28D0402093DD7E0079F9FE /* GoalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C28D03F2093DD7E0079F9FE /* GoalViewController.swift */; };
+		6C28D0402093DD7E0079F9FE /* TargetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C28D03F2093DD7E0079F9FE /* TargetViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -23,7 +23,7 @@
 		6C28D0302093DD190079F9FE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		6C28D0332093DD190079F9FE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		6C28D0352093DD190079F9FE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		6C28D03F2093DD7E0079F9FE /* GoalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoalViewController.swift; sourceTree = "<group>"; };
+		6C28D03F2093DD7E0079F9FE /* TargetViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TargetViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -72,7 +72,7 @@
 		6C28D03B2093DD270079F9FE /* controller */ = {
 			isa = PBXGroup;
 			children = (
-				6C28D03F2093DD7E0079F9FE /* GoalViewController.swift */,
+				6C28D03F2093DD7E0079F9FE /* TargetViewController.swift */,
 			);
 			path = controller;
 			sourceTree = "<group>";
@@ -170,7 +170,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6C28D0402093DD7E0079F9FE /* GoalViewController.swift in Sources */,
+				6C28D0402093DD7E0079F9FE /* TargetViewController.swift in Sources */,
 				6C28D0272093DD170079F9FE /* AppDelegate.swift in Sources */,
 				6C28D02F2093DD170079F9FE /* PostIT.xcdatamodeld in Sources */,
 			);
