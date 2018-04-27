@@ -9,11 +9,20 @@
 import UIKit
 
 class TargetViewController: UIViewController {
-
+    
+    //outlets
+    
+    @IBOutlet weak var tableView: UITableView!
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
     }
 
+    
+    @IBAction func addTargetButtonPressed(_ sender: Any) {
+    }
+    
 }
