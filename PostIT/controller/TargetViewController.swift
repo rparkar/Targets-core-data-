@@ -20,6 +20,7 @@ class TargetViewController: UIViewController, UITableViewDelegate, UITableViewDa
         
         tableView.delegate = self
         tableView.dataSource = self
+        tableView.isHidden = false
 
         // Do any additional setup after loading the view.
     }
@@ -30,9 +31,9 @@ class TargetViewController: UIViewController, UITableViewDelegate, UITableViewDa
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: "targetCel") as? TargetCell else {return UITableViewCell()}
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: "targetCell") as? TargetCell else {return UITableViewCell()}
         
-        cell.configureCell(description: "Clean the pad", termType: .longTerm, targetAmount: 1)
+        cell.configureCell(description: "Clean my pad", termType: .longTerm, targetAmount: 2)
         
         return cell
     }

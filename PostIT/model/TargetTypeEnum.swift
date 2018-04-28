@@ -9,7 +9,7 @@
 import Foundation
 
 //explicitly declaring it of type string
-enum TargetType : String{
+enum TargetType : String {
     
     case longTerm = "Long Term"
     case shortTerm = "Short Term"
