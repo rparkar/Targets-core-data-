@@ -41,7 +41,8 @@ class FInishTargetViewController: UIViewController, UITextFieldDelegate {
             self.save { (success) in
                 
                 if success {
-                    dismiss(animated: true, completion: nil)
+                    self.dismiss(animated: true, completion: nil)
+                    
                 }
                 
             }

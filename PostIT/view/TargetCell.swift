@@ -15,12 +15,18 @@ class TargetCell: UITableViewCell {
     @IBOutlet weak var targetTermTypeLabel: UILabel!
     @IBOutlet weak var targetProgressLabel: UILabel!
     
-    
-    func configureCell(description: String, termType: TargetType, targetAmount: Int) {
+    func configureCell(targte: Targets) {
         
-        self.targetProgressLabel.text = String(describing: targetAmount)
-        self.targetTermTypeLabel.text = termType.rawValue
-        self.targetDescriptionLabel.text = description
+        self.targetProgressLabel.text = targte.targetDescription
+        self.targetTermTypeLabel.text = targte.targetType
+        self.targetProgressLabel.text = String(describing: targte.targetProgressValue)
     }
+    
+//    func configureCell(description: String, termType: TargetType, targetAmount: Int32) {
+//
+//        self.targetProgressLabel.text = String(describing: targetAmount)
+//        self.targetTermTypeLabel.text = termType.rawValue
+//        self.targetDescriptionLabel.text = description
+//    }
     
 }
