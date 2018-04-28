@@ -16,10 +16,10 @@ class TargetCell: UITableViewCell {
     @IBOutlet weak var targetProgressLabel: UILabel!
     
     
-    func configureCell(description: String, termType: String, targetAmount: Int) {
+    func configureCell(description: String, termType: TargetType, targetAmount: Int) {
         
         self.targetProgressLabel.text = String(describing: targetAmount)
-        self.targetTermTypeLabel.text = termType
+        self.targetTermTypeLabel.text = termType.rawValue
         self.targetDescriptionLabel.text = description
     }
     

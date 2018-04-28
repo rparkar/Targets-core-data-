@@ -8,7 +8,7 @@
 
 import UIKit
 
-class TargetViewController: UIViewController {
+class TargetViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     //outlets
     
@@ -17,10 +17,29 @@ class TargetViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        tableView.delegate = self
+        tableView.dataSource = self
 
         // Do any additional setup after loading the view.
     }
 
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return 1
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: "targetCel") as? TargetCell else {return UITableViewCell()}
+        
+        cell.configureCell(description: "Clean the pad", termType: .longTerm, targetAmount: 1)
+        
+        return cell
+    }
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 1
+    }
     
     @IBAction func addTargetButtonPressed(_ sender: Any) {
     }
