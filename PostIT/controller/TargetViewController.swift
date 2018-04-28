@@ -17,6 +17,10 @@ class TargetViewController: UIViewController, UITableViewDelegate, UITableViewDa
     //outlets
     
     @IBOutlet weak var tableView: UITableView!
+    
+    @IBOutlet weak var undoDeleteView: UIView!
+    
+    //variables
     var target : [Targets] = []
     
     override func viewDidLoad() {
@@ -84,6 +88,7 @@ class TargetViewController: UIViewController, UITableViewDelegate, UITableViewDa
             self.removeData(indexPath: indexPath)
             self.fetchCoreDataData()
             tableView.deleteRows(at: [indexPath], with: .automatic)
+            self.undoDeleteView.isHidden = false
         }
         
         let addAction = UITableViewRowAction(style: .normal, title: "ADD 1") { (rowAction, indexPath) in
@@ -101,6 +106,14 @@ class TargetViewController: UIViewController, UITableViewDelegate, UITableViewDa
     
     @IBAction func addTargetPressed(_ sender: Any) {
         performSegue(withIdentifier: "createTargetVC", sender: nil)
+    }
+    
+    
+    
+    @IBAction func undoButtonPressed(_ sender: Any) {
+        
+        undoDeleteView.isHidden = true
+        
     }
     
     
