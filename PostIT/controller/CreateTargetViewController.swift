@@ -8,7 +8,7 @@
 
 import UIKit
 
-class CreateTargetViewController: UIViewController {
+class CreateTargetViewController: UIViewController, UITextViewDelegate {
 
     //outlets
     
@@ -32,6 +32,7 @@ class CreateTargetViewController: UIViewController {
     func initialSetup() {
         longTermButton.setSelectedColor()
         shortTermButton.setDeselectedColor()
+        targetTextField.delegate = self
     }
     
 
@@ -49,6 +50,21 @@ class CreateTargetViewController: UIViewController {
     
     
     @IBAction func nextButtonPressed(_ sender: Any) {
+        
+        if targetTextField.text != "" {
+            
+            guard let finishTargetVC = storyboard?.instantiateViewController(withIdentifier: "FinishTargetVC") as? FInishTargetViewController else {return}
+            
+            finishTargetVC.initData(description: targetTextField.text!, targetType: targetType)
+            
+           present(finishTargetVC, animated: true, completion: nil)
+        
+        }
+        
+    }
+    
+    func textViewDidBeginEditing(_ textView: UITextView) {
+        <#code#>
     }
     
     @IBAction func backButtonPressed(_ sender: Any) {
