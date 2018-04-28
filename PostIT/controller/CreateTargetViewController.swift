@@ -64,7 +64,8 @@ class CreateTargetViewController: UIViewController, UITextViewDelegate {
     }
     
     func textViewDidBeginEditing(_ textView: UITextView) {
-        <#code#>
+        targetTextField.text = ""
+        
     }
     
     @IBAction func backButtonPressed(_ sender: Any) {
