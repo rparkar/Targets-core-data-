@@ -47,8 +47,8 @@
                                         </constraints>
                                         <state key="normal" image="addGoal"/>
                                         <connections>
-                                            <action selector="addTargetButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="3Xa-9m-UqN"/>
-                                            <segue destination="iwb-62-iPR" kind="presentation" id="jhk-LP-ch9"/>
+                                            <action selector="addTargetPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="shW-UB-3Ns"/>
+                                            <segue destination="iwb-62-iPR" kind="showDetail" identifier="createTargetVC" id="jhk-LP-ch9"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -90,22 +90,19 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" translatesAutoresizingMaskIntoConstraints="NO" id="qR5-A7-v7g">
-                                                    <rect key="frame" x="8" y="8" width="273" height="54"/>
+                                                    <rect key="frame" x="8" y="8" width="277" height="54"/>
                                                     <subviews>
                                                         <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uLu-nZ-ayQ">
-                                                            <rect key="frame" x="0.0" y="0.0" width="273" height="30"/>
+                                                            <rect key="frame" x="0.0" y="0.0" width="277" height="30"/>
                                                             <subviews>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Target: " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="o8u-kR-YDt">
-                                                                    <rect key="frame" x="0.0" y="0.0" width="58" height="30"/>
-                                                                    <constraints>
-                                                                        <constraint firstAttribute="width" constant="58" id="Fcj-MV-CvM"/>
-                                                                    </constraints>
+                                                                    <rect key="frame" x="0.0" y="0.0" width="62" height="30"/>
                                                                     <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="18"/>
                                                                     <nil key="textColor"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="This is the target for today" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="cUB-YH-sGu">
-                                                                    <rect key="frame" x="58" y="0.0" width="215" height="30"/>
+                                                                    <rect key="frame" x="62" y="0.0" width="215" height="30"/>
                                                                     <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="18"/>
                                                                     <nil key="textColor"/>
                                                                     <nil key="highlightedColor"/>
@@ -113,19 +110,16 @@
                                                             </subviews>
                                                         </stackView>
                                                         <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Vu3-5r-O2V">
-                                                            <rect key="frame" x="0.0" y="30" width="273" height="24"/>
+                                                            <rect key="frame" x="0.0" y="30" width="277" height="24"/>
                                                             <subviews>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Term: " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pyv-nV-02k">
                                                                     <rect key="frame" x="0.0" y="0.0" width="40" height="24"/>
-                                                                    <constraints>
-                                                                        <constraint firstAttribute="width" constant="40" id="XI1-o1-Y2j"/>
-                                                                    </constraints>
                                                                     <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="14"/>
                                                                     <nil key="textColor"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
-                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Short Term" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KSH-tR-Hat">
-                                                                    <rect key="frame" x="40" y="0.0" width="233" height="24"/>
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="Short Term" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KSH-tR-Hat">
+                                                                    <rect key="frame" x="40" y="0.0" width="237" height="24"/>
                                                                     <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="14"/>
                                                                     <nil key="textColor"/>
                                                                     <nil key="highlightedColor"/>
@@ -138,7 +132,7 @@
                                                     </constraints>
                                                 </stackView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="10" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="12" translatesAutoresizingMaskIntoConstraints="NO" id="T5g-g4-yC9">
-                                                    <rect key="frame" x="291" y="19" width="69" height="32"/>
+                                                    <rect key="frame" x="328" y="19" width="32" height="32"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="32" id="ifE-om-nfN"/>
                                                     </constraints>
@@ -148,7 +142,6 @@
                                                 </label>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstItem="T5g-g4-yC9" firstAttribute="leading" secondItem="qR5-A7-v7g" secondAttribute="trailing" constant="10" id="364-Qt-4ua"/>
                                                 <constraint firstAttribute="trailingMargin" secondItem="T5g-g4-yC9" secondAttribute="trailing" id="9jy-xQ-4Lo"/>
                                                 <constraint firstAttribute="bottomMargin" secondItem="T5g-g4-yC9" secondAttribute="bottom" constant="8" id="CTd-AG-CdB"/>
                                                 <constraint firstItem="T5g-g4-yC9" firstAttribute="top" secondItem="EdI-sh-hxB" secondAttribute="topMargin" constant="8" id="ER9-HF-k7N"/>
@@ -224,7 +217,6 @@
                                         </constraints>
                                         <state key="normal" image="back"/>
                                         <connections>
-                                            <action selector="addTargetButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="67o-ec-WAJ"/>
                                             <action selector="backButtonPressed:" destination="iwb-62-iPR" eventType="touchUpInside" id="5nD-6V-y4f"/>
                                         </connections>
                                     </button>

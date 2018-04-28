@@ -54,6 +54,7 @@ class FInishTargetViewController: UIViewController, UITextFieldDelegate {
     @IBAction func backButtonPressed(_ sender: Any) {
         
         dismiss(animated: true, completion: nil)
+    
     }
     
     func save(completion: (_ finished: Bool) -> ()) {
@@ -68,6 +69,7 @@ class FInishTargetViewController: UIViewController, UITextFieldDelegate {
         do {
             try managedContext.save()
             completion(true) //saved successfully
+            dismiss(animated: true, completion: nil)
         } catch {
             debugPrint("\(error.localizedDescription)")
             completion(false) // did not save

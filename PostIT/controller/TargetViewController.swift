@@ -31,7 +31,12 @@ class TargetViewController: UIViewController, UITableViewDelegate, UITableViewDa
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        
+        fetchCoreDataData()
+        tableView.reloadData()
+
+    }
+
+    func fetchCoreDataData() {
         self.fetch { (success) in
             
             if success {
@@ -42,9 +47,8 @@ class TargetViewController: UIViewController, UITableViewDelegate, UITableViewDa
                 }
             }
         }
-        tableView.reloadData()
-    }
 
+    }
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
@@ -63,12 +67,37 @@ class TargetViewController: UIViewController, UITableViewDelegate, UITableViewDa
         return target.count
     }
     
-    @IBAction func addTargetButtonPressed(_ sender: Any) {
+    func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
+        
+        return true
     }
+    
+    func tableView(_ tableView: UITableView, editingStyleForRowAt indexPath: IndexPath) -> UITableViewCellEditingStyle {
+        
+        return UITableViewCellEditingStyle.none
+    }
+    
+    func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
+        
+        let deleteAction  = UITableViewRowAction(style: .destructive, title: "DELETE") { (rowAction, indexPath) in
+            
+            self.removeData(indexPath: indexPath)
+            self.fetchCoreDataData()
+            tableView.deleteRows(at: [indexPath], with: .automatic)
+        }
+        
+        deleteAction.backgroundColor = #colorLiteral(red: 1, green: 0, blue: 0.07594997436, alpha: 1)
+        return [deleteAction]
+    }
+    
+    @IBAction func addTargetPressed(_ sender: Any) {
+        performSegue(withIdentifier: "createTargetVC", sender: nil)
+    }
+    
     
 }
 
-//fetchign core data
+//fetching and deleting core data
 
 extension TargetViewController {
     
@@ -84,6 +113,20 @@ extension TargetViewController {
             debugPrint("\(error.localizedDescription)")
             completion(false)
         }
+    }
+    
+    func removeData(indexPath: IndexPath) {
+        guard let managedContext = appDelegate?.persistentContainer.viewContext else {return}
+        
+        managedContext.delete(target[indexPath.row])
+        
+        do {
+            try managedContext.save()
+            
+        } catch {
+            debugPrint("\(error.localizedDescription)")
+        }
+        
     }
 }
 

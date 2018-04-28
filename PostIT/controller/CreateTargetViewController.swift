@@ -56,10 +56,11 @@ class CreateTargetViewController: UIViewController, UITextViewDelegate {
             guard let finishTargetVC = storyboard?.instantiateViewController(withIdentifier: "FinishTargetVC") as? FInishTargetViewController else {return}
             
             finishTargetVC.initData(description: targetTextField.text!, targetType: targetType)
-            
-           present(finishTargetVC, animated: true, completion: nil)
+            present(finishTargetVC, animated: true, completion: nil)
         
         }
+        
+
         
     }
     
