@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import CoreData
 
 class FInishTargetViewController: UIViewController, UITextFieldDelegate {
     
@@ -35,11 +36,43 @@ class FInishTargetViewController: UIViewController, UITextFieldDelegate {
     }
 
     @IBAction func createTargetButtonPressed(_ sender: Any) {
+        
+        if pointsTextField.text != "" {
+            self.save { (success) in
+                
+                if success {
+                    dismiss(animated: true, completion: nil)
+                }
+                
+            }
+        }
+
+        
     }
     
     @IBAction func backButtonPressed(_ sender: Any) {
         
         dismiss(animated: true, completion: nil)
+    }
+    
+    func save(completion: (_ finished: Bool) -> ()) {
+        guard let managedContext = appDelegate?.persistentContainer.viewContext else {return}
+        let target = Targets(context: managedContext)
+        
+        target.targetDescription = targetDescription!
+        target.targetType = targetType.rawValue
+        target.targetCompletionValue = Int32(pointsTextField.text!)!
+        target.targetProgressValue = Int32(0)
+        
+        do {
+            try managedContext.save()
+            completion(true) //saved successfully
+        } catch {
+            debugPrint("\(error.localizedDescription)")
+            completion(false) // did not save
+        }
+       
+        
     }
     
 }

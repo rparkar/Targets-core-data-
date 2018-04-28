@@ -7,6 +7,10 @@
 //
 
 import UIKit
+import CoreData
+
+//publicly AV constant
+let appDelegate = UIApplication.shared.delegate as? AppDelegate
 
 class TargetViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
