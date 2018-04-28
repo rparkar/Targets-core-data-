@@ -17,18 +17,36 @@ class CreateTargetViewController: UIViewController {
     @IBOutlet weak var shortTermButton: UIButton!
     @IBOutlet weak var nextButton: UIButton!
     
+    
+    //variables
+    var targetType: TargetType = .longTerm
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        initialSetup()
 
         // Do any additional setup after loading the view.
     }
     
+    func initialSetup() {
+        longTermButton.setSelectedColor()
+        shortTermButton.setDeselectedColor()
+    }
+    
 
     @IBAction func longTermButtonPressed(_ sender: Any) {
+        targetType = .longTerm
+        longTermButton.setSelectedColor()
+        shortTermButton.setDeselectedColor()
     }
     
     @IBAction func shortTermButtonPressed(_ sender: Any) {
+        targetType = .shortTerm
+        shortTermButton.setSelectedColor()
+        longTermButton.setDeselectedColor()
     }
+    
     
     @IBAction func nextButtonPressed(_ sender: Any) {
     }

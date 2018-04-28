@@ -16,6 +16,7 @@
 		6C28D0422093EBCE0079F9FE /* TargetCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C28D0412093EBCE0079F9FE /* TargetCell.swift */; };
 		6C4838392093F88600BCD73A /* TargetTypeEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C4838382093F88600BCD73A /* TargetTypeEnum.swift */; };
 		6C48383B2094078A00BCD73A /* CreateTargetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C48383A2094078A00BCD73A /* CreateTargetViewController.swift */; };
+		6C48383D2094128600BCD73A /* UIButtonExtention.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C48383C2094128600BCD73A /* UIButtonExtention.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +31,7 @@
 		6C28D0412093EBCE0079F9FE /* TargetCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TargetCell.swift; sourceTree = "<group>"; };
 		6C4838382093F88600BCD73A /* TargetTypeEnum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TargetTypeEnum.swift; sourceTree = "<group>"; };
 		6C48383A2094078A00BCD73A /* CreateTargetViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateTargetViewController.swift; sourceTree = "<group>"; };
+		6C48383C2094128600BCD73A /* UIButtonExtention.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIButtonExtention.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,7 +64,7 @@
 		6C28D0252093DD170079F9FE /* PostIT */ = {
 			isa = PBXGroup;
 			children = (
-				6C28D03E2093DD390079F9FE /* utilities */,
+				6C28D03E2093DD390079F9FE /* extention */,
 				6C28D03D2093DD340079F9FE /* model */,
 				6C28D03C2093DD2E0079F9FE /* view */,
 				6C28D03B2093DD270079F9FE /* controller */,
@@ -101,11 +103,12 @@
 			path = model;
 			sourceTree = "<group>";
 		};
-		6C28D03E2093DD390079F9FE /* utilities */ = {
+		6C28D03E2093DD390079F9FE /* extention */ = {
 			isa = PBXGroup;
 			children = (
+				6C48383C2094128600BCD73A /* UIButtonExtention.swift */,
 			);
-			path = utilities;
+			path = extention;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -182,6 +185,7 @@
 				6C48383B2094078A00BCD73A /* CreateTargetViewController.swift in Sources */,
 				6C28D0402093DD7E0079F9FE /* TargetViewController.swift in Sources */,
 				6C28D0272093DD170079F9FE /* AppDelegate.swift in Sources */,
+				6C48383D2094128600BCD73A /* UIButtonExtention.swift in Sources */,
 				6C4838392093F88600BCD73A /* TargetTypeEnum.swift in Sources */,
 				6C28D0422093EBCE0079F9FE /* TargetCell.swift in Sources */,
 				6C28D02F2093DD170079F9FE /* PostIT.xcdatamodeld in Sources */,
