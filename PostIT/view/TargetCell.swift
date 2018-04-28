@@ -14,12 +14,20 @@ class TargetCell: UITableViewCell {
     @IBOutlet weak var targetDescriptionLabel: UILabel!
     @IBOutlet weak var targetTermTypeLabel: UILabel!
     @IBOutlet weak var targetProgressLabel: UILabel!
+    @IBOutlet weak var targetCompleteView: UIView!
     
     func configureCell(targte: Targets) {
         
-        self.targetProgressLabel.text = targte.targetDescription
+        self.targetDescriptionLabel.text = targte.targetDescription
         self.targetTermTypeLabel.text = targte.targetType
         self.targetProgressLabel.text = String(describing: targte.targetProgressValue)
+        
+        if targte.targetProgressValue == targte.targetCompletionValue {
+            
+            targetCompleteView.isHidden = false
+        } else {
+            self.targetCompleteView.isHidden = true
+        }
     }
     
 //    func configureCell(description: String, termType: TargetType, targetAmount: Int32) {
