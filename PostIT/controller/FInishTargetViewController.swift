@@ -15,6 +15,7 @@ class FInishTargetViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var createTargetButton: UIButton!
     @IBOutlet weak var pointsTextField: UITextField!
     
+
     //variables
     var targetDescription: String!
     var targetType: TargetType!
@@ -30,8 +31,8 @@ class FInishTargetViewController: UIViewController, UITextFieldDelegate {
         super.viewDidLoad()
         
         //bound to keyboard
-
         pointsTextField.delegate = self
+        createTargetButton.bindToKeyBoard()
         // Do any additional setup after loading the view.
     }
 

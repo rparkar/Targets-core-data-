@@ -30,6 +30,7 @@ class CreateTargetViewController: UIViewController, UITextViewDelegate {
     }
     
     func initialSetup() {
+        nextButton.bindToKeyBoard()
         longTermButton.setSelectedColor()
         shortTermButton.setDeselectedColor()
         targetTextField.delegate = self

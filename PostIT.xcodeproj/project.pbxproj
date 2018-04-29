@@ -14,6 +14,7 @@
 		6C28D0342093DD190079F9FE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6C28D0322093DD190079F9FE /* LaunchScreen.storyboard */; };
 		6C28D0402093DD7E0079F9FE /* TargetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C28D03F2093DD7E0079F9FE /* TargetViewController.swift */; };
 		6C28D0422093EBCE0079F9FE /* TargetCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C28D0412093EBCE0079F9FE /* TargetCell.swift */; };
+		6C360A5B20963CB9009A5AAA /* BindToKeyBoard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C360A5A20963CB9009A5AAA /* BindToKeyBoard.swift */; };
 		6C4838392093F88600BCD73A /* TargetTypeEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C4838382093F88600BCD73A /* TargetTypeEnum.swift */; };
 		6C48383B2094078A00BCD73A /* CreateTargetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C48383A2094078A00BCD73A /* CreateTargetViewController.swift */; };
 		6C48383D2094128600BCD73A /* UIButtonExtention.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C48383C2094128600BCD73A /* UIButtonExtention.swift */; };
@@ -30,6 +31,7 @@
 		6C28D0352093DD190079F9FE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6C28D03F2093DD7E0079F9FE /* TargetViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TargetViewController.swift; sourceTree = "<group>"; };
 		6C28D0412093EBCE0079F9FE /* TargetCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TargetCell.swift; sourceTree = "<group>"; };
+		6C360A5A20963CB9009A5AAA /* BindToKeyBoard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BindToKeyBoard.swift; sourceTree = "<group>"; };
 		6C4838382093F88600BCD73A /* TargetTypeEnum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TargetTypeEnum.swift; sourceTree = "<group>"; };
 		6C48383A2094078A00BCD73A /* CreateTargetViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateTargetViewController.swift; sourceTree = "<group>"; };
 		6C48383C2094128600BCD73A /* UIButtonExtention.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIButtonExtention.swift; sourceTree = "<group>"; };
@@ -110,6 +112,7 @@
 			isa = PBXGroup;
 			children = (
 				6C48383C2094128600BCD73A /* UIButtonExtention.swift */,
+				6C360A5A20963CB9009A5AAA /* BindToKeyBoard.swift */,
 			);
 			path = extention;
 			sourceTree = "<group>";
@@ -187,6 +190,7 @@
 			files = (
 				6C48383B2094078A00BCD73A /* CreateTargetViewController.swift in Sources */,
 				6C28D0402093DD7E0079F9FE /* TargetViewController.swift in Sources */,
+				6C360A5B20963CB9009A5AAA /* BindToKeyBoard.swift in Sources */,
 				6C28D0272093DD170079F9FE /* AppDelegate.swift in Sources */,
 				6C48383D2094128600BCD73A /* UIButtonExtention.swift in Sources */,
 				6C48383F20941C9500BCD73A /* FInishTargetViewController.swift in Sources */,

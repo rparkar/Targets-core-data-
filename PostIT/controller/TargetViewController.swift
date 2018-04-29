@@ -29,6 +29,8 @@ class TargetViewController: UIViewController, UITableViewDelegate, UITableViewDa
         tableView.delegate = self
         tableView.dataSource = self
         tableView.isHidden = false
+        
+        
 
         // Do any additional setup after loading the view.
     }
@@ -97,6 +99,7 @@ class TargetViewController: UIViewController, UITableViewDelegate, UITableViewDa
             tableView.reloadRows(at: [indexPath], with: .automatic)
         }
         
+
         deleteAction.backgroundColor = #colorLiteral(red: 1, green: 0, blue: 0.07594997436, alpha: 1)
         addAction.backgroundColor = #colorLiteral(red: 0.9529411793, green: 0.6862745285, blue: 0.1333333403, alpha: 1)
         
@@ -112,8 +115,14 @@ class TargetViewController: UIViewController, UITableViewDelegate, UITableViewDa
     
     @IBAction func undoButtonPressed(_ sender: Any) {
         
+        undoDelete()
         undoDeleteView.isHidden = true
+//        fetchCoreDataData()
         
+    }
+    
+    @IBAction func closeUndoViewButtonPressed(_ sender: Any) {
+        undoDeleteView.isHidden = true
     }
     
     
@@ -122,6 +131,24 @@ class TargetViewController: UIViewController, UITableViewDelegate, UITableViewDa
 //fetching and deleting core data
 
 extension TargetViewController {
+    
+    func undoDelete() {
+        
+        guard let managedContext = appDelegate?.persistentContainer.viewContext else {return}
+        managedContext.undo()
+       
+        managedContext.refreshAllObjects()
+        
+       do {
+        try managedContext.save()
+        fetchCoreDataData()
+        tableView.reloadData()
+
+       } catch {
+          debugPrint("\(error.localizedDescription)")
+       }
+        
+    }
     
     func setProgress(atIndexPath indexpath: IndexPath) {
         
@@ -160,12 +187,12 @@ extension TargetViewController {
         
         managedContext.delete(target[indexPath.row])
         
-        do {
-            try managedContext.save()
-            
-        } catch {
-            debugPrint("\(error.localizedDescription)")
-        }
+//        do {
+//            try managedContext.save()
+//
+//        } catch {
+//            debugPrint("\(error.localizedDescription)")
+//        }
         
     }
 }

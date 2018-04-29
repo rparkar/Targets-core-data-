@@ -197,7 +197,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="v6a-Nz-y07">
-                                        <rect key="frame" x="303" y="15" width="64" height="40"/>
+                                        <rect key="frame" x="295" y="15" width="64" height="40"/>
                                         <fontDescription key="fontDescription" name="AvenirNext-Bold" family="Avenir Next" pointSize="20"/>
                                         <state key="normal" title="UNDO">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -206,16 +206,29 @@
                                             <action selector="undoButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="lqd-hV-xgR"/>
                                         </connections>
                                     </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nA4-FO-rCl">
+                                        <rect key="frame" x="360" y="5" width="10" height="10"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="10" id="ICx-Uq-0J5"/>
+                                            <constraint firstAttribute="width" constant="10" id="OE4-LZ-6Xk"/>
+                                        </constraints>
+                                        <state key="normal" image="close"/>
+                                        <connections>
+                                            <action selector="closeUndoViewButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Tlz-aW-FOb"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" red="0.92950904190000005" green="0.090979955400000007" blue="0.1594906925" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <constraints>
+                                    <constraint firstItem="nA4-FO-rCl" firstAttribute="top" secondItem="Kbi-LO-8Ag" secondAttribute="top" constant="5" id="3Kn-Od-FUt"/>
                                     <constraint firstItem="v6a-Nz-y07" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="Kbi-LO-8Ag" secondAttribute="leading" constant="20" symbolic="YES" id="FsX-dq-5Lw"/>
                                     <constraint firstItem="rzk-eJ-flg" firstAttribute="centerY" secondItem="Kbi-LO-8Ag" secondAttribute="centerY" id="KRb-Aa-oAd"/>
                                     <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="rzk-eJ-flg" secondAttribute="trailing" constant="20" symbolic="YES" id="Toa-Dj-S2I"/>
+                                    <constraint firstAttribute="trailing" secondItem="nA4-FO-rCl" secondAttribute="trailing" constant="5" id="YNi-gG-BZ6"/>
                                     <constraint firstItem="v6a-Nz-y07" firstAttribute="centerY" secondItem="Kbi-LO-8Ag" secondAttribute="centerY" id="ZdS-rb-OUf"/>
                                     <constraint firstItem="rzk-eJ-flg" firstAttribute="leading" secondItem="Kbi-LO-8Ag" secondAttribute="leading" constant="8" id="h26-kW-glc"/>
                                     <constraint firstAttribute="height" constant="70" id="pwr-Lr-daD"/>
-                                    <constraint firstAttribute="trailing" secondItem="v6a-Nz-y07" secondAttribute="trailing" constant="8" id="yHS-ak-puL"/>
+                                    <constraint firstAttribute="trailing" secondItem="v6a-Nz-y07" secondAttribute="trailing" constant="16" id="yHS-ak-puL"/>
                                 </constraints>
                             </view>
                         </subviews>
@@ -456,14 +469,13 @@
                                 <color key="backgroundColor" red="0.94275027509999998" green="0.68063069779999996" blue="0.4012731055" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="6Ny-3a-Bdd"/>
-                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="50" id="Qxm-RQ-1ey"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="AvenirNext-Bold" family="Avenir Next" pointSize="17"/>
                                 <state key="normal" title="CREATE TARGET">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="createTargetButtonPressed:" destination="4aL-bS-Y4f" eventType="touchUpInside" id="eYr-6T-MAk"/>
+                                    <action selector="createTargetButtonPressed:" destination="4aL-bS-Y4f" eventType="touchUpInside" id="tLh-j9-fJB"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -482,7 +494,7 @@
                         <viewLayoutGuide key="safeArea" id="w0Z-HB-sTy"/>
                     </view>
                     <connections>
-                        <outlet property="createTargetButton" destination="qja-cN-c65" id="vDo-t6-rMH"/>
+                        <outlet property="createTargetButton" destination="qja-cN-c65" id="z6a-gZ-HoV"/>
                         <outlet property="pointsTextField" destination="dKz-rJ-eHN" id="UVD-un-X9F"/>
                     </connections>
                 </viewController>
@@ -494,5 +506,6 @@
     <resources>
         <image name="addGoal" width="35" height="32"/>
         <image name="back" width="14" height="25"/>
+        <image name="close" width="22" height="20"/>
     </resources>
 </document>
