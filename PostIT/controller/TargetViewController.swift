@@ -87,10 +87,25 @@ class TargetViewController: UIViewController, UITableViewDelegate, UITableViewDa
         
         let deleteAction  = UITableViewRowAction(style: .destructive, title: "DELETE") { (rowAction, indexPath) in
             
-            self.removeData(indexPath: indexPath)
-            self.fetchCoreDataData()
-            tableView.deleteRows(at: [indexPath], with: .automatic)
-            self.undoDeleteView.isHidden = false
+            let deleteTarget = UIAlertController(title: "CONFIRM", message: "Are you sure you want to delete? You can not undo this action", preferredStyle: .alert)
+            
+            let cancelAlert = UIAlertAction(title: "CANCEL", style: .cancel, handler: nil)
+            let deleteTargetAlert = UIAlertAction(title: "DELETE", style: .destructive) { (action) in
+                
+                self.removeData(indexPath: indexPath)
+                self.fetchCoreDataData()
+                tableView.deleteRows(at: [indexPath], with: .automatic)
+                self.undoDeleteView.isHidden = false
+            }
+            
+            deleteTarget.addAction(cancelAlert)
+            deleteTarget.addAction(deleteTargetAlert)
+            
+            self.present(deleteTarget, animated: true,completion: nil)
+            
+    
+            //remove
+
         }
         
         let addAction = UITableViewRowAction(style: .normal, title: "ADD 1") { (rowAction, indexPath) in
@@ -115,9 +130,8 @@ class TargetViewController: UIViewController, UITableViewDelegate, UITableViewDa
     
     @IBAction func undoButtonPressed(_ sender: Any) {
         
-        undoDelete()
-        undoDeleteView.isHidden = true
-//        fetchCoreDataData()
+//        undoDelete()
+//        undoDeleteView.isHidden = true
         
     }
     
@@ -131,24 +145,24 @@ class TargetViewController: UIViewController, UITableViewDelegate, UITableViewDa
 //fetching and deleting core data
 
 extension TargetViewController {
-    
-    func undoDelete() {
-        
-        guard let managedContext = appDelegate?.persistentContainer.viewContext else {return}
-        managedContext.undo()
-       
-        managedContext.refreshAllObjects()
-        
-       do {
-        try managedContext.save()
-        fetchCoreDataData()
-        tableView.reloadData()
-
-       } catch {
-          debugPrint("\(error.localizedDescription)")
-       }
-        
-    }
+//
+//    func undoDelete() {
+//
+//        guard let managedContext = appDelegate?.persistentContainer.viewContext else {return}
+//        managedContext.undo()
+//
+//        managedContext.refreshAllObjects()
+//
+//       do {
+//        try managedContext.save()
+//        fetchCoreDataData()
+//        tableView.reloadData()
+//
+//       } catch {
+//          debugPrint("\(error.localizedDescription)")
+//       }
+//
+//    }
     
     func setProgress(atIndexPath indexpath: IndexPath) {
         
@@ -183,16 +197,18 @@ extension TargetViewController {
     }
     
     func removeData(indexPath: IndexPath) {
+        
         guard let managedContext = appDelegate?.persistentContainer.viewContext else {return}
         
-        managedContext.delete(target[indexPath.row])
+        managedContext.delete(self.target[indexPath.row])
+        do {
+            try managedContext.save()
+            
+        } catch {
+            debugPrint("\(error.localizedDescription)")
+        }
         
-//        do {
-//            try managedContext.save()
-//
-//        } catch {
-//            debugPrint("\(error.localizedDescription)")
-//        }
+
         
     }
 }
