@@ -29,6 +29,16 @@ class CreateTargetViewController: UIViewController, UITextViewDelegate {
         // Do any additional setup after loading the view.
     }
     
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(true)
+        
+        if someValue == true {
+            dismiss(animated: true, completion: nil)
+        }
+        
+    }
+    
+    
     func initialSetup() {
         nextButton.bindToKeyBoard()
         longTermButton.setSelectedColor()

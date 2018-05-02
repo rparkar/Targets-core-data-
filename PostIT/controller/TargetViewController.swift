@@ -11,6 +11,7 @@ import CoreData
 
 //publicly AV constant
 let appDelegate = UIApplication.shared.delegate as? AppDelegate
+public var someValue = false
 
 class TargetViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
@@ -65,6 +66,8 @@ class TargetViewController: UIViewController, UITableViewDelegate, UITableViewDa
         
         let targets = target[indexPath.row]
         cell.configureCell(targte: targets)
+        
+        someValue = false
        
         return cell
     }

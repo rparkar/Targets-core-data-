@@ -44,11 +44,13 @@ class FInishTargetViewController: UIViewController, UITextFieldDelegate {
                 if success {
 //                    self.dismiss(animated: true, completion: nil)
                     self.dismiss(animated: true, completion: nil)
+                    someValue = true
                     
                 }
                 
             }
         }
+        
 
         
     }
